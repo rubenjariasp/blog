@@ -1,12 +1,12 @@
 <?php
 
-class CategoriesController
+class UsersController
 {
     private $model;
 
     public function __construct()
     {
-        $this->model = new CategoriesModel();
+        $this->model = new UsersModels();
     }
 
     public function set($data, $activity)

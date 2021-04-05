@@ -29,6 +29,7 @@ abstract class Models
         $this->db_open();
         $this->conn->query($this->query);
         $this->db_close();
+
     }
 
     protected function get_query()
@@ -41,7 +42,7 @@ abstract class Models
         return array_pop($this->rows);
 
     }
-    abstract protected function set($data);
+    abstract protected function set($data, $activity);
     abstract protected function get($id);
     abstract protected function del($id);
 }

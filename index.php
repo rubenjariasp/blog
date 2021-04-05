@@ -4,12 +4,20 @@ require_once './controllers/Autoload.php';
 $autoload= new Autoload();
 
 $data = [
-    "id"=>3,
-  "name"=>"Accion"
+    "name"=>"jesus",
+  "user"=>"rubenjariasp",
+    "password"=>"ruben",
+    "question"=>1,
+    "answer"=>"noris",
+    "rol"=>0
 ];
 
-$category= new CategoriesController();
-$item= $category->del(2);
+$data2 = [
+    "id"=> 8,
+    "name"=> "deporte"
+];
 
+$category = new CategoriesController();
+$category->set($data2, 'update');
 
 

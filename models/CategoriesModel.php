@@ -2,8 +2,16 @@
 
 
 class CategoriesModel extends Models {
-    public function set($data){
-       $this->query= "REPLACE INTO categories (id, name) VALUES ($data[id], '$data[name]')";
+    public function set($data, $activity){
+       if($activity=='insert'){
+           $this->query = "INSERT INTO categories (id, name) VALUE (DEFAULT, '$data[name]')";
+       }
+
+       elseif ($activity == 'update'){
+           $this->query = "UPDATE categories SET name = '$data[name]'  WHERE id = $data[id] ";
+       }
+
+
 
        $this->set_query();
     }
@@ -24,8 +32,6 @@ class CategoriesModel extends Models {
     }
     public function del($id){
         $this->query = "DELETE FROM categories WHERE id=$id";
-
-        echo $this->query;
 
         $this->set_query();
     }
