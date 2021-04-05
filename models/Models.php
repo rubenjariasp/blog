@@ -28,6 +28,7 @@ abstract class Models
     {
         $this->db_open();
         $this->conn->query($this->query);
+        var_dump($this->conn->error);
         $this->db_close();
 
     }

@@ -1,7 +1,7 @@
 <?php
 
 
-class UsersModels extends Models
+class InputsModel extends Models
 {
     public function set($array, $activity)
     {

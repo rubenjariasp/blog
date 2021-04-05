@@ -4,8 +4,8 @@ require_once './controllers/Autoload.php';
 $autoload= new Autoload();
 
 $data = [
-    "name"=>"noris",
-  "user"=>"rubenjariasp",
+    "name"=>"jose",
+  "user"=>"ruprosperi",
     "password"=>"ruben",
     "question"=>1,
     "answer"=>"noris",
@@ -13,10 +13,21 @@ $data = [
 ];
 
 $data2 = [
-    "id"=> 9,
-    "name"=> "roles"
+    "id"=> 0,
+    "name"=> "horror"
 ];
+/*Categoria*/
+//$categoria= new CategoriesController();
+//$datos= $categoria->get(1);
+//$categoria->del(1);
 
+/*Usuario*/
+$user = new UsersController();
+//$user->set($data, 'update');
+//$datos= $user->get('ruprosperi');
+//$user->del('ruprosperi');
+
+/*Entrada*/
 
 echo "<pre>";
 var_dump($datos);
