@@ -19,7 +19,7 @@ class UsersModels extends Models
     {
         $this->query = is_null($data)
             ? "SELECT * FROM users"
-            : "SELECT * FROM users WHERE id= $data";
+            : "SELECT * FROM users WHERE user= $data";
 
         $this->get_query();
 

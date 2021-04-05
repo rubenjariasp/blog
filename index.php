@@ -4,11 +4,11 @@ require_once './controllers/Autoload.php';
 $autoload= new Autoload();
 
 $data = [
-    "name"=>"noris",
-  "user"=>"rubenjariasp",
+    "name"=>"eudorina",
+  "user"=>"vallita",
     "password"=>"ruben",
     "question"=>1,
-    "answer"=>"noris",
+    "answer"=>"lourdes",
     "rol"=>0
 ];
 
@@ -17,6 +17,8 @@ $data2 = [
     "name"=> "roles"
 ];
 
+$user= new UsersController();
+$datos= $user->get('ruprosperi');
 
 echo "<pre>";
 var_dump($datos);
