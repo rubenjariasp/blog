@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/*====Estilos HEADER====*/
+.header{
+    max-width: 100%;
+    background-color: cornflowerblue;
+    max-height: 152px;
+}
+
+.header__title{
+    font-family: Serif;
+    text-align: center;
+    margin: 25px;
+}
+
+.header__navbar{
+    margin-bottom: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__links{
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 2px;
+
+}
+
+.header__links:hover{
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+}
+/*====Estilos MAIN====*/
+.main{
+    display: flex;
+    flex-grow: 1;
+    background-color: azure;
+}
+
+.main__section,
+.sidebar{
+    padding: 20px;
+}
+
+.main__section{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.main__sub_title{
+    font-family: Serif, serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main__articles{
+    width: 80%;
+    border: 2px solid dimgray;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: azure;
+}
+
+.main__title_article{
+    font-family: Serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.main_description_article{
+    text-align: justify;
+}
+
+.main__info{
+    display: block;
+    font-weight: bold;
+}
+
+.main__container_butons{
+    text-align: end;
+
+}
+.btn__buton{
+    padding: 5px;
+    color: white;
+    border: none;
+}
+
+.btn__buton:hover{
+    cursor: pointer;
+}
+
+.btn__buton-info{
+    background-color: lawngreen;
+    color: #000;
+}
+
+.btn__buton-update{
+    background-color: mediumblue;
+}
+
+.btn__buton-delete{
+    background-color: crimson;
+}
+
+.sidebar{
+    width: 30%;
+}
+
+.sidebar__container_form{
+    width: 80%;
+    background-color: lightblue;
+    margin-bottom: 30px;
+    border-radius: 25px;
+}
+
+.sidebar__title_form{
+    text-align: center;
+    font-family: Serif;
+    padding: 15px;
+}
+
+.sidebar__container_inputs{
+    margin-bottom: 25px;
+    padding: 5px;
+
+}
+
+
+.inputs{
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.footer{
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 20px 0;
+}
+
