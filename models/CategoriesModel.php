@@ -2,36 +2,36 @@
 
 
 class CategoriesModel extends Models {
-    public function set($data, $activity){
+    public function set($array, $activity){
        if($activity=='insert'){
-           $this->query = "INSERT INTO categories (id, name) VALUE (DEFAULT, '$data[name]')";
+           $this->query = "INSERT INTO categories (id, name) VALUE (DEFAULT, '$array[name]')";
        }
 
        elseif ($activity == 'update'){
-           $this->query = "UPDATE categories SET name = '$data[name]'  WHERE id = $data[id] ";
+           $this->query = "UPDATE categories SET name = '$array[name]'  WHERE id = $array[id] ";
        }
 
 
 
        $this->set_query();
     }
-    public function get($id){
-        $this->query = is_null($id)
+    public function get($data){
+        $this->query = is_null($data)
             ? "SELECT * FROM categories"
-            : "SELECT * FROM categories WHERE id= $id";
+            : "SELECT * FROM categories WHERE id= $data";
 
         $this->get_query();
 
-        $data=[];
+        $request=[];
 
         foreach ($this->rows as $key => $value){
-            array_push($data, $value);
+            array_push($request, $value);
         }
 
-        return $data;
+        return $request;
     }
-    public function del($id){
-        $this->query = "DELETE FROM categories WHERE id=$id";
+    public function del($data){
+        $this->query = "DELETE FROM categories WHERE id=$data";
 
         $this->set_query();
     }

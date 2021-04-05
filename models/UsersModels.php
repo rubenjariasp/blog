@@ -1,37 +1,40 @@
 <?php
 
-class UsersModels extends Models {
-    public function set($data,$activity){
-        if($activity=='sugnin'){
-            $this->query= "INSERT INTO users (name, user, password, question, answer, rol) VALUES ($data[name], $data[user], $data[password], $data[question], $data[answer], $data[rol]);
-";
-        }
 
-        elseif ($activity=='update'){
-            $this->query = "UPDATE users SET name='$data[name]' WHERE user= 'data[user]'";
+class UsersModels extends Models
+{
+    public function set($array, $activity)
+    {
+        if ($activity == 'insert') {
+            $this->query = "INSERT INTO users (name, user, password, question, answer, rol) VALUES ('$array[name]', '$array[user]',MD5('$array[password]'),$array[question],'$array[answer]',$array[rol])";
+        }
+        elseif ($activity == 'update') {
+            $this->query = "UPDATE users SET name='$array[name]' WHERE user= '$array[user]' ";
         }
 
         $this->set_query();
     }
-    public function get($id){
-        $this->query = is_null($id)
+
+    public function get($data)
+    {
+        $this->query = is_null($data)
             ? "SELECT * FROM users"
-            : "SELECT * FROM users WHERE id= $id";
+            : "SELECT * FROM users WHERE id= $data";
 
         $this->get_query();
 
-        $data=[];
+        $request = [];
 
-        foreach ($this->rows as $key => $value){
-            array_push($data, $value);
+        foreach ($this->rows as $key => $value) {
+            array_push($request, $value);
         }
 
-        return $data;
+        return $request;
     }
-    public function del($id){
-        $this->query = "DELETE FROM users WHERE id=$id";
 
-        echo $this->query;
+    public function del($data)
+    {
+        $this->query = "DELETE FROM categories WHERE id=$data";
 
         $this->set_query();
     }

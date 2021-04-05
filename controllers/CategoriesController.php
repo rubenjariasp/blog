@@ -9,16 +9,16 @@ class CategoriesController
         $this->model = new CategoriesModel();
     }
 
-    public function set($data, $activity)
+    public function set($array, $activity)
     {
-        $this->model->set($data, $activity);
+        $this->model->set($array, $activity);
     }
 
-    public function get($id=null){
-        return $this->model->get($id);
+    public function get($data=null){
+        return $this->model->get($data);
     }
 
-    public function del($id= null){
-        return $this->model->del($id);
+    public function del($data= null){
+        return $this->model->del($data);
     }
 }

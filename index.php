@@ -4,7 +4,7 @@ require_once './controllers/Autoload.php';
 $autoload= new Autoload();
 
 $data = [
-    "name"=>"jesus",
+    "name"=>"noris",
   "user"=>"rubenjariasp",
     "password"=>"ruben",
     "question"=>1,
@@ -13,11 +13,13 @@ $data = [
 ];
 
 $data2 = [
-    "id"=> 8,
-    "name"=> "deporte"
+    "id"=> 9,
+    "name"=> "roles"
 ];
 
-$category = new CategoriesController();
-$category->set($data2, 'update');
+
+echo "<pre>";
+var_dump($datos);
+echo "</pre>";
 
 

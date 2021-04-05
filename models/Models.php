@@ -42,7 +42,7 @@ abstract class Models
         return array_pop($this->rows);
 
     }
-    abstract protected function set($data, $activity);
-    abstract protected function get($id);
-    abstract protected function del($id);
+    abstract protected function set($array, $activity);
+    abstract protected function get($data);
+    abstract protected function del($data);
 }
