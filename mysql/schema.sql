@@ -31,7 +31,7 @@ CREATE TABLE  inputs(
     title varchar(20) not null,
     description varchar(255) not null,
     fecha date not null,
-    foreign key (id_category) references categories (id) on update cascade on delete restrict,
+    foreign key (id_category) references categories (id) on update cascade on delete cascade ,
     foreign  key (user ) references users (user) on update cascade on delete restrict
 );
  /*=== Categorias ===*/
@@ -67,4 +67,13 @@ DELETE FROM users WHERE user ='ruprosperi';
 
  /* Insertar entrada */
 
-INSERT INTO inputs (id, id_category, user, title, description, fecha) VALUES (0,2, 'ruprosperi', 'Breakin Bad la mejor serie de la historia', 'La serie extrenada en el 2008, es considerada por la critica estadounidense como la mejor serie de a historia', CURRENT_DATE());
+INSERT INTO inputs (id, id_category, user, title, description, fecha) VALUES (0,2, 'norisprosperi', 'Breakin Bad la mejor serie de la historia', 'La serie extrenada en el 2008, es considerada por la critica estadounidense como la mejor serie de a historia', CURRENT_DATE());
+
+/*Listar entradas */
+SELECT c.name AS 'categoria', u.user AS 'autor', i.title, i.description, i.fecha from inputs i INNER JOIN categories c on i.id_category = c.id inner join users u on i.user = u.user;
+
+/*actualizar entradas*/
+UPDATE inputs SET id_category = , title = '', description = '' WHERE id=;
+
+/*borrar entradas*/
+DELETE * FROM inputs WHERE id = ;
