@@ -13,10 +13,19 @@
     <header class="header">
         <h1 class="header__title">Blog de Rubén</h1>
         <nav class="header__navbar">
-            <a class="header__links" href="#">Deportes</a>
-            <a class="header__links" href="#">Drama</a>
-            <a class="header__links" href="#">Accion</a>
-            <a class="header__links" href="#">Horror</a>
+        <?php 
+            $categories= new CategoriesController();
+            $category= $categories->get();
+
+            if(count($category)>0):
+                for($i=0; $i<count($category); $i++):
+        ?>
+
+            <a class="header__links" href="#"><?= ucfirst( $category[$i]['name'] );?></a>
+        <?php
+                endfor;
+            endif;
+        ?>
         </nav>
     </header>
 
