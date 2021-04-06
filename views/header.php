@@ -24,8 +24,14 @@
             <a class="header__links" href="#"><?= ucfirst( $category[$i]['name'] );?></a>
         <?php
                 endfor;
+            else:
+        ?>
+                <p>No hay Categorías Registradas</p>
+        <?php
             endif;
         ?>
+
+        
         </nav>
     </header>
 
