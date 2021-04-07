@@ -7,6 +7,7 @@
         <ul>
             <li><a href="#">Nueva entrada</a></li>
             <li><a href="#">Nueva categoría</a></li>
+            <li><a href="./views/logout.php">Salir</a></li>
         </ul>
     </div>
     <?php
