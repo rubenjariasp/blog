@@ -26,9 +26,13 @@ class Router{
 
                     if(count($login)>0){
                         $_SESSION['login']= true;
-                        $_SESSION['user'] = $login;
-
+                        foreach($login as $row){
+                            $_SESSION['name'] = $row['name'];
+                            $_SESSION['user'] = $row['user'];
+                        }
                         header('location:./');
+                    }else{
+                        echo 'nada';
                     }
                 }else if($_POST['form']=='signin'){
                     //programacio de registro
