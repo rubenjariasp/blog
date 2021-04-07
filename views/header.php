@@ -21,7 +21,7 @@
                 for($i=0; $i<count($category); $i++):
         ?>
 
-            <a class="header__links" href="#"><?= ucfirst( $category[$i]['name'] );?></a>
+            <a class="header__links" href="inputs.php"><?= ucfirst( $category[$i]['name'] );?></a>
         <?php
                 endfor;
             else:
