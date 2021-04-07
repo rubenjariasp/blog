@@ -9,6 +9,7 @@
     <div class="sidebar__container_form">
         <h3 class="sidebar__title_form">Login</h3>
         <form method="post">
+            <input type="hidden" name="form" value="login">
             <div class="sidebar__container_inputs">
                 <label class="sidebar__label" for="email">Correo:</label>
                 <input type="email" class="inputs" name="email" id="email" placeholder="Correo" required>
@@ -28,6 +29,7 @@
     <div class="sidebar__container_form">
         <h3 class="sidebar__title_form">Signup</h3>
         <form method="post">
+            <input type="hidden" name="form" value="signin">
             <div class="sidebar__container_inputs">
                 <label class="sidebar__label" for="name">Nombres:</label>
                 <input type="text" class="inputs" name="name" id="name" placeholder="Nombres" required>
@@ -46,7 +48,7 @@
             <div class="sidebar__container_inputs">
                 <label class="sidebar__label" for="password_new">Contraseña:</label>
                 <input type="password" class="inputs" name="password" id="password_new" placeholder="Contraseña"
-                       required>
+                required>
             </div>
 
             <div class="sidebar__container_inputs">
