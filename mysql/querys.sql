@@ -21,7 +21,7 @@ CREATE TABLE inputs
     id          int primary key auto_increment,
     id_category int,
     user        char(15),
-    title       char(20)  not null,
+    title       char(50)  not null,
     description varchar(1000) not null,
     fecha       date         not null,
     foreign key (id_category) references categories (id) on update cascade on delete restrict,
@@ -54,3 +54,6 @@ insert into inputs (id, id_category, user, title, description, fecha)
 values (0, 3, 'chusofcb', 'el conjuro', 'es una serie de películas de terror, distribuidas por la división New Line Cinema de Warner Bros. Pictures. Las películas presentan una toma de ficción sobre los casos de la vida real de Ed y Lorraine Warren, investigadores paranormales y autores asociados con casos importantes pero controvertidos. La saga principal del universo, The Conjuring, sigue sus intentos de ayudar a las personas que se encuentran poseídas por espíritus demoníacos, mientras que el resto de películas son spin-off que se centran en los orígenes de algunas de las entidades que los Warren han encontrado.',CURRENT_DATE());
 
 insert into inputs(id, id_category, user, title, description, fecha) value(0, 1, 'ruprosperi', 'ÁNGEL DI MARÍA ELIGIÓ ENTRE MESSI, CRISTIANO Y NEYMAR', 'Es difícil de decirlo. No porque tenga una buena relación con Cristiano y una buena relación con Messi, porque soy amigo, y una excelente relación con Ney ahora acá (en el PSG) también, que tengo una amistad muy linda. Pero Leo es Leo. Hace cosas extraordinarias. Vos las ves y es natural. No tiene que hacer gimnasio, no tiene que hacer nada que los demás tienen que hacer. Entonces, es imposible decir otro jugador con los que he jugado en mi carrera y de lo que he visto en todo lo que llevo de vida. Creo que Leo es de otro planeta', CURRENT_DATE());
+
+# seleccionar entradas
+SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.* FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id;

@@ -1,17 +1,21 @@
 <?php
-    $inputs;
+    $inputs = new InputsController();
+    $input= $inputs->get();
+
 ?>
 <section class="main__section">
     <h2 class="main__sub_title">Últimas entradas.</h2>
+    <?php
+        if( count($input)>0 ):
+            for ($i=0; $i < count($input); $i++):
+    ?>
     <article class="main__articles">
-        <h3 class="main__title_article">Valverde es mejor que De Jong</h3>
-        <p class="main_description_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem
-            commodi distinctio, eligendi esse et explicabo fuga fugiat hic illum iste laudantium magni minima molestiae
-            neque rerum tenetur voluptatum! Omnis?</p>
+        <h3 class="main__title_article"><?=$input[$i]['title'];?></h3>
+        <p class="main_description_article"><?=$input[$i]['description'];?></p>
         <div class="main__more">
-            <cite class="main__info">Autor: Jesus.</cite>
-            <cite class="main__info">Fecha: 03-04-2021.</cite>
-            <cite class="main__info">Categoria: Deportes.</cite>
+            <cite class="main__info">Autor: <?=$input[$i]['autor'];?>.</cite>
+            <cite class="main__info">Fecha: <?=$input[$i]['fecha'];?>.</cite>
+            <cite class="main__info">Categoria: <?=$input[$i]['name'];?>.</cite>
             <div class="main__container_butons">
                 <input class="btn__buton btn__buton-info" type="button" value="Ver Mas">
                 <input class="btn__buton btn__buton-update" type="button" value="Modificar">
@@ -19,64 +23,8 @@
             </div>
         </div>
     </article>
-    <article class="main__articles">
-        <h3 class="main__title_article">Valverde es mejor que De Jong</h3>
-        <p class="main_description_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem
-            commodi distinctio, eligendi esse et explicabo fuga fugiat hic illum iste laudantium magni minima molestiae
-            neque rerum tenetur voluptatum! Omnis?</p>
-        <div class="main__more">
-            <cite class="main__info">Autor: Jesus.</cite>
-            <cite class="main__info">Fecha: 03-04-2021.</cite>
-            <div class="main__container_butons">
-                <input class="btn__buton btn__buton-info" type="button" value="Ver Mas">
-                <input class="btn__buton btn__buton-update" type="button" value="Modificar">
-                <input class="btn__buton btn__buton-delete" type="button" value="Eliminar">
-            </div>
-        </div>
-    </article>
-    <article class="main__articles">
-        <h3 class="main__title_article">Valverde es mejor que De Jong</h3>
-        <p class="main_description_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem
-            commodi distinctio, eligendi esse et explicabo fuga fugiat hic illum iste laudantium magni minima molestiae
-            neque rerum tenetur voluptatum! Omnis?</p>
-        <div class="main__more">
-            <cite class="main__info">Autor: Jesus.</cite>
-            <cite class="main__info">Fecha: 03-04-2021.</cite>
-            <div class="main__container_butons">
-                <input class="btn__buton btn__buton-info" type="button" value="Ver Mas">
-                <input class="btn__buton btn__buton-update" type="button" value="Modificar">
-                <input class="btn__buton btn__buton-delete" type="button" value="Eliminar">
-            </div>
-        </div>
-    </article>
-    <article class="main__articles">
-        <h3 class="main__title_article">Valverde es mejor que De Jong</h3>
-        <p class="main_description_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem
-            commodi distinctio, eligendi esse et explicabo fuga fugiat hic illum iste laudantium magni minima molestiae
-            neque rerum tenetur voluptatum! Omnis?</p>
-        <div class="main__more">
-            <cite class="main__info">Autor: Jesus.</cite>
-            <cite class="main__info">Fecha: 03-04-2021.</cite>
-            <div class="main__container_butons">
-                <input class="btn__buton btn__buton-info" type="button" value="Ver Mas">
-                <input class="btn__buton btn__buton-update" type="button" value="Modificar">
-                <input class="btn__buton btn__buton-delete" type="button" value="Eliminar">
-            </div>
-        </div>
-    </article>
-    <article class="main__articles">
-        <h3 class="main__title_article">Valverde es mejor que De Jong</h3>
-        <p class="main_description_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem
-            commodi distinctio, eligendi esse et explicabo fuga fugiat hic illum iste laudantium magni minima molestiae
-            neque rerum tenetur voluptatum! Omnis?</p>
-        <div class="main__more">
-            <cite class="main__info">Autor: Jesus.</cite>
-            <cite class="main__info">Fecha: 03-04-2021.</cite>
-            <div class="main__container_butons">
-                <input class="btn__buton btn__buton-info" type="button" value="Ver Mas">
-                <input class="btn__buton btn__buton-update" type="button" value="Modificar">
-                <input class="btn__buton btn__buton-delete" type="button" value="Eliminar">
-            </div>
-        </div>
-    </article>
+    <?php
+            endfor;
+        endif;
+    ?>
 </section>
