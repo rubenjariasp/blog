@@ -1,4 +1,7 @@
 <aside class="sidebar">
+    <?php
+        if( isset($_SESSION['user']) ):
+    ?>
     <div class="sidebar__options">
         <h3 class="sidebar__title">Bienvenido Rubén.</h3>
         <ul>
@@ -6,13 +9,16 @@
             <li><a href="#">Nueva categoría</a></li>
         </ul>
     </div>
+    <?php
+        else:
+    ?>
     <div class="sidebar__container_form">
         <h3 class="sidebar__title_form">Login</h3>
         <form method="post">
             <input type="hidden" name="form" value="login">
             <div class="sidebar__container_inputs">
-                <label class="sidebar__label" for="email">Correo:</label>
-                <input type="email" class="inputs" name="email" id="email" placeholder="Correo" required>
+                <label class="sidebar__label" for="email">Usuario:</label>
+                <input type="text" class="inputs" name="email" id="email" placeholder="Usuario" required>
             </div>
 
             <div class="sidebar__container_inputs">
@@ -56,4 +62,7 @@
             </div>
         </form>
     </div>
+    <?php
+        endif;
+    ?>
 </aside>

@@ -41,7 +41,6 @@ abstract class Models
         $result->close();
         $this->db_close();
         return array_pop($this->rows);
-
     }
     abstract protected function set($array, $activity);
     abstract protected function get($data);

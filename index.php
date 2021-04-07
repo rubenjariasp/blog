@@ -5,3 +5,5 @@ $autoload= new Autoload();
 
 $route= new Router();
 
+//session_destroy();
+

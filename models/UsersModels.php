@@ -40,4 +40,18 @@ class UsersModels extends Models
 
         $this->set_query();
     }
+
+    public function CheckUser($array_data){
+        $this->query = "SELECT * FROM users WHERE user = '$array_data[email]' AND password = MD5('$array_data[password]') ";
+
+        $this->get_query();
+
+        $request = [];
+
+        foreach ($this->rows as $key => $value) {
+            array_push($request, $value);
+        }
+
+        return $request;
+    }
 }
