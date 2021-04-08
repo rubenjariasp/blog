@@ -1,3 +1,3 @@
 <?php
 
-define('URL', '/www/html/Bloger/');
+define('URL', 'http://localhost/Bloger/');

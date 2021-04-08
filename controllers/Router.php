@@ -5,6 +5,9 @@ class Router{
 
     public function __construct($route){
         $this->route = $route;
+        if( is_array($route) ){
+            $this->route = $route[0];
+        }
 
         $load_view = new ViewController();
 
