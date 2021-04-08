@@ -13,6 +13,7 @@
     <header class="header">
         <h1 class="header__title">Blog de Rubén</h1>
         <nav class="header__navbar">
+        <a class="header__links" href="home">Inicio</a>
         <?php
             $categories= new CategoriesController();
             $category= $categories->get();
