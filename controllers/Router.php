@@ -1,6 +1,30 @@
 <?php
 
 class Router{
+    private $route;
+
+    public function __construct($route){
+        $this->route = $route;
+
+        $load_view = new ViewController();
+
+        switch ($this->route) {
+            case 'home':
+                $load_view->load_wiew('home');
+            break;
+
+            case 'inputs':
+                $load_view->load_wiew('inputs');
+            break;
+
+            default:
+                # code...
+                break;
+        }
+    }
+}
+
+/*{
     public function __construct(){
         if(!isset($_SESSION)) session_start();
 
