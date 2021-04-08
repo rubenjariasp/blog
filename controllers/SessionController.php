@@ -10,4 +10,10 @@ class SessionController{
     public function login($array_data){
         return $this->model->CheckUser($array_data);
     }
+
+    public function logout(){
+        session_start();
+        session_destroy();
+        header('location:../');
+    }
 }

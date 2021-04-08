@@ -52,6 +52,10 @@ class Router{
                 $load_view->load_wiew('inputs');
             break;
 
+            case 'logout':
+                $load_view->load_wiew('logout');
+            break;
+
             default:
                 # code...
                 break;
