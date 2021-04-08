@@ -22,7 +22,7 @@
                 for($i=0; $i<count($category); $i++):
         ?>
 
-            <a class="header__links" href="<?=URL;?>inputs/"><?= ucfirst( $category[$i]['name'] );?></a>
+            <a class="header__links" href="<?=URL;?>inputs/<?=$category[$i]['id']?>/"><?= ucfirst( $category[$i]['name'] );?></a>
         <?php
                 endfor;
             else:

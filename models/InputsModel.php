@@ -19,7 +19,8 @@ class InputsModel extends Models
     {
         $this->query = is_null($data)
             ? "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.* FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id"
-            : "SELECT * FROM users WHERE user= '$data' ";
+
+            : "SELECT i.*, c.name AS 'categoria' FROM inputs i INNER JOIN categories c ON i.id_category = c.id WHERE id_category= $data";
 
         $this->get_query();
 
