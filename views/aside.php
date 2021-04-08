@@ -1,9 +1,9 @@
 <aside class="sidebar">
     <?php
-        if( isset($_SESSION['user']) ):
+        if( isset($_SESSION['name']) ):
     ?>
     <div class="sidebar__options">
-        <h3 class="sidebar__title">Bienvenido Rubén.</h3>
+        <h3 class="sidebar__title">Bienvenido <?=ucwords(  $_SESSION['name'] );?>.</h3>
         <ul>
             <li><a href="#">Nueva entrada</a></li>
             <li><a href="#">Nueva categoría</a></li>
