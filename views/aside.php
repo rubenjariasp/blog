@@ -8,7 +8,6 @@
             <li><a href="#">Nueva entrada</a></li>
             <li><a href="#">Nueva categoría</a></li>
             <li><a href="<?=URL;?>user_update_info/">Modificar datos personales</a></li>
-            <li><a href="<?=URL;?>user_update_security/">Modificar contraseña</a></li>
             <li><a href="<?=URL;?>logout/">Salir</a></li>
         </ul>
     </div>

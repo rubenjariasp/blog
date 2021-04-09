@@ -16,7 +16,7 @@ class UsersModels extends Models
                 $this->query = "UPDATE users SET name = CONCAT('$array[name_u]',' ', '$array[lastname_u]') WHERE user= '$array[email]'";
 
             }else{
-                echo 'ERROR';
+                $_SESSION['error']['user_up']= 'ok';
             }
         }
 

@@ -23,5 +23,10 @@ class SessionController{
             $clear =  $_SESSION['error']['login'] = null;
             return $clear;
         }
+
+        if( isset($_SESSION['error']['user_up']) ){
+            $clear =  $_SESSION['error']['user_up'] = null;
+            return $clear;
+        }
     }
 }
