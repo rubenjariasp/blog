@@ -6,3 +6,7 @@
 </div>
 </body>
 </html>
+<?php
+    $clean_template= new SessionController();
+    $clean_template->clean_template();
+?>

@@ -16,4 +16,12 @@ class SessionController{
         session_destroy();
         header('location:../');
     }
+
+    public function clean_template(){
+        $clear;
+        if( isset($_SESSION['error']['login']) ){
+            $clear =  $_SESSION['error']['login'] = null;
+            return $clear;
+        }
+    }
 }

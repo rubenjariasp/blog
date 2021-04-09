@@ -15,7 +15,7 @@
     ?>
     <div class="sidebar__container_form">
         <h3 class="sidebar__title_form">Login</h3>
-        <?php if( isset($_SESSION['error']['login']) ): ?>
+        <?php if( isset($_SESSION['error']['login']) && !empty($_SESSION['error']['login']) ): ?>
         <h5 class="sidebar__title_form sidebar__title_form-error">Usuario o contraseña invalida</h5>
         <?php endif; ?>
         <form method="post">
@@ -70,3 +70,4 @@
         endif;
     ?>
 </aside>
+

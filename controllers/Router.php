@@ -42,7 +42,7 @@ class Router{
         }
 
         $load_view = new ViewController();
-        session_start();
+        if(!isset($_SESSION)) session_start();
         switch ($this->route) {
             case 'home':
                 $load_view->load_wiew('home');
