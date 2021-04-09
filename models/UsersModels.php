@@ -7,7 +7,7 @@ class UsersModels extends Models
     {
 
         if ($activity == 'insert') {
-            $this->query = "INSERT INTO users (name, user, password, question, answer, rol) VALUE(CONCAT('$array[name]', ' ', '$array[lastname]'), '$array[email]', '$array[password]', $array[question], '$array[answer]', 1)";
+            $this->query = "INSERT INTO users (name, user, password, question, answer, rol) VALUE(CONCAT('$array[name]', ' ', '$array[lastname]'), '$array[email]', MD5('$array[password]'), $array[question], '$array[answer]', 1)";
         }
         elseif ($activity == 'update') {
             $this->query = "UPDATE users SET name='$array[name]' WHERE user= '$array[user]' ";
