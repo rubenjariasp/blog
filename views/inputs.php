@@ -20,6 +20,12 @@
             <cite class="main__info">Categoria: <?=$input[$i]['name'];?>.</cite>
             <div class="main__container_butons">
                 <input class="btn__buton btn__buton-info" type="button" value="Ver Mas">
+                <?php
+                    if(isset($_SESSION['user']) && $_SESSION['user']==$input[$i]['user']):
+                ?>
+                <input class="btn__buton btn__buton-update" type="button" value="Modificar">
+                <input class="btn__buton btn__buton-delete" type="button" value="Eliminar">
+                <?php endif; ?>
             </div>
         </div>
     </article>
