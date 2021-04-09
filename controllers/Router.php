@@ -29,7 +29,7 @@ class Router{
                     }
 
                 }else{
-                    echo 'nada';
+                    $_SESSION['error']['login']='ok';
                 }
             }
 

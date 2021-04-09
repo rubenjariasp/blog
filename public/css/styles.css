@@ -138,6 +138,10 @@ body{
     padding: 15px;
 }
 
+.sidebar__title_form-error{
+    background-color: #ff9494;
+}
+
 .sidebar__container_inputs{
     margin-bottom: 25px;
     padding: 5px;
