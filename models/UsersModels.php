@@ -5,12 +5,19 @@ class UsersModels extends Models
 {
     public function set($array, $activity)
     {
-
         if ($activity == 'insert') {
             $this->query = "INSERT INTO users (name, user, password, question, answer, rol) VALUE(CONCAT('$array[name]', ' ', '$array[lastname]'), '$array[email]', MD5('$array[password]'), $array[question], '$array[answer]', 1)";
         }
         elseif ($activity == 'update') {
-            $this->query = "UPDATE users SET name='$array[name]' WHERE user= '$array[user]' ";
+
+            $user= $this->CheckUser($array);
+
+            if( count($user) > 0 ){
+                $this->query = "UPDATE users SET name = CONCAT('$array[name_u]',' ', '$array[lastname_u]') WHERE user= '$array[email]'";
+
+            }else{
+                echo 'ERROR';
+            }
         }
 
         $this->set_query();
@@ -22,7 +29,6 @@ class UsersModels extends Models
             ? "SELECT * FROM users"
 
             : "SELECT * FROM users WHERE user= '$data' ";
-
 
         $this->get_query();
 

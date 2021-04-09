@@ -44,6 +44,17 @@ class Router{
                 $user_new->set($array_data, 'insert');
             }
 
+            elseif($_POST['form']=='update_user'){
+                $array_data= [];
+                foreach ($_POST as $key => $value) {
+                    $array_data[$key]=strtolower($value);
+                    unset($array_data['form']);
+                }
+
+                $user_new = new UsersController();
+                $user_new->set($array_data, 'update');
+            }
+
         }
 
         $this->route = $route;
@@ -54,6 +65,7 @@ class Router{
 
         $load_view = new ViewController();
         if(!isset($_SESSION)) session_start();
+
         switch ($this->route) {
             case 'home':
                 $load_view->load_wiew('home');
@@ -67,9 +79,14 @@ class Router{
                 $load_view->load_wiew('logout');
             break;
 
+            case 'user_update_info':
+                $load_view->load_wiew('user_update_info');
+            break;
+
             default:
                 # code...
                 break;
         }
     }
 }
+
