@@ -17,7 +17,7 @@ class Router{
                     $array_data[$key]=$value;
                     unset($array_data['form']);
                 }
-                //var_dump($array_data);
+
                 $session = new SessionController();
                 $login = $session->login($array_data);
 
@@ -31,6 +31,17 @@ class Router{
                 }else{
                     $_SESSION['error']['login']='ok';
                 }
+            }
+
+            elseif($_POST['form']=='signin'){
+                $array_data= [];
+                foreach ($_POST as $key => $value) {
+                    $array_data[$key]=$value;
+                    unset($array_data['form']);
+                }
+
+                $user_new = new UsersController();
+                $user_new->set($array_data, 'insert');
             }
 
         }

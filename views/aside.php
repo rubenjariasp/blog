@@ -51,13 +51,28 @@
             </div>
 
             <div class="sidebar__container_inputs">
-                <label class="sidebar__label" for="email_new">Correo:</label>
-                <input type="email" class="inputs" name="email" id="email_new" placeholder="Correo" required>
+                <label class="sidebar__label" for="email_new">Usuario:</label>
+                <input type="text" class="inputs" name="email" id="email_new" placeholder="Usuario" required>
             </div>
 
             <div class="sidebar__container_inputs">
                 <label class="sidebar__label" for="password_new">Contraseña:</label>
                 <input type="password" class="inputs" name="password" id="password_new" placeholder="Contraseña"
+                required>
+            </div>
+
+            <div class="sidebar__container_inputs">
+                <label class="sidebar__label" for="password_new">Pregunta secreta:</label>
+                <select name="question" id="question">
+                    <option value="1">Nombre de la madre</option>
+                    <option value="2">Nombre de la mascota</option>
+                    <option value="3">Color favorito</option>
+                </select>
+            </div>
+
+            <div class="sidebar__container_inputs">
+                <label class="sidebar__label" for="password_new">Respuesta:</label>
+                <input type="text" class="inputs" name="answer" id="answer" placeholder="Respuesta"
                 required>
             </div>
 
