@@ -5,7 +5,7 @@
     <div class="sidebar__options">
         <h3 class="sidebar__title">Bienvenido, <?=ucwords(  $_SESSION['name'] );?>.</h3>
         <ul>
-            <li><a href="#">Nueva entrada</a></li>
+            <li><a href="<?=URL;?>input_create/">Nueva entrada</a></li>
             <li><a href="#">Nueva categoría</a></li>
             <li><a href="<?=URL;?>user_update_info/">Modificar datos personales</a></li>
             <li><a href="<?=URL;?>logout/">Salir</a></li>

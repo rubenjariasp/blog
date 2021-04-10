@@ -6,12 +6,11 @@ class InputsModel extends Models
     public function set($array, $activity)
     {
         if ($activity == 'insert') {
-            $this->query = "INSERT INTO users (name, user, password, question, answer, rol) VALUES ('$array[name]', '$array[user]',MD5('$array[password]'),$array[question],'$array[answer]',$array[rol])";
+            $this->query = "INSERT INTO inputs (id, id_category, user, title, description, fecha) VALUE(DEFAULT, $array[categoria], '$array[user]', '$array[title]', '$array[description]', CURRENT_DATE())";
         }
         elseif ($activity == 'update') {
             $this->query = "UPDATE inputs SET title='$array[title]', description = '$array[description]' WHERE id= $array[id] ";
         }
-
         $this->set_query();
     }
 

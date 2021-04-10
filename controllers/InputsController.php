@@ -10,7 +10,7 @@ class InputsController
     }
 
     public function set($array, $activity)
-    {
+    {   
         $this->model->set($array, $activity);
     }
 

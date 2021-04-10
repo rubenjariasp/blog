@@ -81,6 +81,16 @@ class Router{
                 $input_up = new InputsController();
                 $input_up->set($array_data, 'update');
             }
+
+            if($_POST['input_crud'] == 'create_input'){
+                $array_data= [];
+                foreach ($_POST as $key => $value) {
+                    $array_data[$key]=strtolower($value);
+                    unset($array_data['input_crud']);
+                }
+                $input_cr = new InputsController();
+                $input_cr->set($array_data, 'insert');
+            }
         }
 
         $this->route = $route;
@@ -107,6 +117,10 @@ class Router{
 
             case 'input_update':
                 $load_view->load_wiew('input_update');
+            break;
+
+            case 'input_create':
+                $load_view->load_wiew('input_create');
             break;
 
             case 'logout':

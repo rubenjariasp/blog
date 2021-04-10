@@ -9,7 +9,6 @@
     //echo "<pre>";
     //var_dump($input);
     //echo"</pre>";
-    
 
 ?>
 <section class="main__section">
