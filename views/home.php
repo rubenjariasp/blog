@@ -1,6 +1,9 @@
 <?php
     $inputs = new InputsController();
     $input= $inputs->get();
+    //echo '<pre>';
+    //var_dump($input);
+    //echo '</pre>';
 
 ?>
 <section class="main__section">
@@ -16,9 +19,11 @@
             <cite class="main__info">Autor: <?=ucwords( $input[$i]['autor'] );?>.</cite>
             <cite class="main__info">Fecha: <?=$input[$i]['fecha'];?>.</cite>
             <cite class="main__info">Categoria: <?=$input[$i]['name'];?>.</cite>
+            <?=$input[$i]['id'];?>
             <div class="main__container_butons">
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="select">
+                    <input type="hidden" name="id" value="<?=$input[$i]['id'];?>">
                     <input class="btn__buton btn__buton-info" type="submit" value="Ver Mas">
                 </form>
 
@@ -27,10 +32,12 @@
                 ?>
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="update">
+                    <input type="hidden" name="id" value="<?=$input[$i]['id'];?>">
                     <input class="btn__buton btn__buton-update" type="submit" value="Modificar">
                 </form>
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="delete">
+                    <input type="hidden" name="id" value="<?=$input[$i]['id'];?>">
                     <input class="btn__buton btn__buton-delete" type="submit" value="Eliminar">
                 </form>
                 <?php endif; ?>

@@ -20,7 +20,7 @@
         <div class="main__more">
             <cite class="main__info">Autor: <?=ucwords( $input[$i]['autor'] );?>.</cite>
             <cite class="main__info">Fecha: <?=$input[$i]['fecha'];?>.</cite>
-            <cite class="main__info">Categoria: <?=$input[$i]['categoria'];?>.</cite>
+            <cite class="main__info">Categoria: <?=ucwords($input[$i]['categoria']);?>.</cite>
             <div class="main__container_butons">
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="select">

@@ -18,7 +18,7 @@ class InputsModel extends Models
     public function get($data)
     {
         $this->query = is_null($data)
-            ? "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.* FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id"
+            ? "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.name as 'categoria' FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id"
 
             : "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.name as 'categoria' FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id WHERE i.id_category= $data";
 
