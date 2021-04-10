@@ -9,7 +9,7 @@
 
 ?>
 <section class="main__section">
-<h2 class="main__sub_title">Entradas de <?=$input[0]['name']?>.</h2>
+
     <?php
         if( count($input)>0 ):
             for ($i=0; $i < count($input); $i++):

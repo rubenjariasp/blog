@@ -64,6 +64,13 @@ class Router{
 
                 header('location:'. $url);
             }
+
+            if($_POST['input_crud'] == 'update'){
+                $id = $_POST['id'];
+                $url= URL.'input_update/'.$id.'/';
+
+                header('location:'. $url);
+            }
         }
 
         $this->route = $route;
@@ -86,6 +93,10 @@ class Router{
 
             case 'input':
                 $load_view->load_wiew('input');
+            break;
+
+            case 'input_update':
+                $load_view->load_wiew('input_update');
             break;
 
             case 'logout':
