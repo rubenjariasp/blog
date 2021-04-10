@@ -57,6 +57,13 @@ class Router{
 
         }
 
+        if ( isset($_POST['input_crud']) ){
+            if($_POST['input_crud'] == 'select'){
+                $url= URL.'input/';
+                header('location:<?=$url;?>');
+            }
+        }
+
         $this->route = $route;
 
         if( is_array($route) ){

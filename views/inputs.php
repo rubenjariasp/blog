@@ -3,9 +3,10 @@
 
     $inputs = new InputsController();
     $input= $inputs->get($url[1]);
+
 ?>
 <section class="main__section">
-<h2 class="main__sub_title">Entradas de <?=$input[0]['categoria']?>.</h2>
+<h2 class="main__sub_title">Entradas de <?=$input[0]['name']?>.</h2>
     <?php
         if( count($input)>0 ):
             for ($i=0; $i < count($input); $i++):
@@ -21,6 +22,7 @@
             <div class="main__container_butons">
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="select">
+                    <input type="hidden" name="id" value="<?=$input[$i]['id'];?>">
                     <input class="btn__buton btn__buton-info" type="submit" value="Ver Mas">
                 </form>
 
@@ -29,10 +31,12 @@
                 ?>
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="update">
+                    <input type="hidden" name="id" value="<?=$input[$i]['id'];?>">
                     <input class="btn__buton btn__buton-update" type="submit" value="Modificar">
                 </form>
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="delete">
+                    <input type="hidden" name="id" value="<?=$input[$i]['id'];?>">
                     <input class="btn__buton btn__buton-delete" type="submit" value="Eliminar">
                 </form>
                 <?php endif; ?>
