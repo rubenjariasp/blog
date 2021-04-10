@@ -34,7 +34,7 @@ class InputsModel extends Models
 
     public function del($data)
     {
-        $this->query = "DELETE FROM users WHERE user = '$data'";
+        $this->query = "DELETE FROM inputs WHERE id = '$data'";
 
         $this->set_query();
     }

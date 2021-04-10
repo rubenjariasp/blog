@@ -91,6 +91,12 @@ class Router{
                 $input_cr = new InputsController();
                 $input_cr->set($array_data, 'insert');
             }
+
+            if($_POST['input_crud'] == 'delete'){
+               $id= $_POST['id'];
+               $input_del= new InputsController();
+               $input_del->del($id);
+            }
         }
 
         $this->route = $route;
