@@ -17,12 +17,22 @@
             <cite class="main__info">Fecha: <?=$input[$i]['fecha'];?>.</cite>
             <cite class="main__info">Categoria: <?=$input[$i]['name'];?>.</cite>
             <div class="main__container_butons">
-                <input class="btn__buton btn__buton-info" type="button" value="Ver Mas">
+                <form method='post'>
+                    <input type="hidden" name="input_crud" value="select">
+                    <input class="btn__buton btn__buton-info" type="submit" value="Ver Mas">
+                </form>
+
                 <?php
                     if(isset($_SESSION['user']) && $_SESSION['user']==$input[$i]['user']):
                 ?>
-                <input class="btn__buton btn__buton-update" type="button" value="Modificar">
-                <input class="btn__buton btn__buton-delete" type="button" value="Eliminar">
+                <form method='post'>
+                    <input type="hidden" name="input_crud" value="update">
+                    <input class="btn__buton btn__buton-update" type="submit" value="Modificar">
+                </form>
+                <form method='post'>
+                    <input type="hidden" name="input_crud" value="delete">
+                    <input class="btn__buton btn__buton-delete" type="submit" value="Eliminar">
+                </form>
                 <?php endif; ?>
             </div>
         </div>
