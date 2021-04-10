@@ -4,13 +4,15 @@
     $inputs = new InputsController();
     $input= $inputs->get($url[1]);
 
+
 ?>
 <section class="main__section">
-<h2 class="main__sub_title">Entradas de <?=$input[0]['name']?>.</h2>
     <?php
         if( count($input)>0 ):
-            for ($i=0; $i < count($input); $i++):
     ?>
+    <h2 class="main__sub_title">Entradas de <?=$input[0]['categoria']?>.</h2>
+
+    <?php for ($i=0; $i < count($input); $i++): ?>
 
     <article class="main__articles">
         <h3 class="main__title_article"><?=ucfirst( $input[$i]['title'] );?></h3>
@@ -18,7 +20,7 @@
         <div class="main__more">
             <cite class="main__info">Autor: <?=ucwords( $input[$i]['autor'] );?>.</cite>
             <cite class="main__info">Fecha: <?=$input[$i]['fecha'];?>.</cite>
-            <cite class="main__info">Categoria: <?=$input[$i]['name'];?>.</cite>
+            <cite class="main__info">Categoria: <?=$input[$i]['categoria'];?>.</cite>
             <div class="main__container_butons">
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="select">

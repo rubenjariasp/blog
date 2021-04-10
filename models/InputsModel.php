@@ -20,7 +20,7 @@ class InputsModel extends Models
         $this->query = is_null($data)
             ? "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.* FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id"
 
-            : "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.* FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id WHERE id_category= $data";
+            : "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.name as 'categoria' FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id WHERE i.id_category= $data";
 
         $this->get_query();
 
@@ -38,5 +38,20 @@ class InputsModel extends Models
         $this->query = "DELETE FROM users WHERE user = '$data'";
 
         $this->set_query();
+    }
+
+    public function check_input($data){
+
+        $this->query = "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.* FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id WHERE i.id= $data";
+
+        $this->get_query();
+
+        $request = [];
+
+        foreach ($this->rows as $key => $value) {
+            array_push($request, $value);
+        }
+
+        return $request;
     }
 }

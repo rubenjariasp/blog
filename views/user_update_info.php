@@ -1,7 +1,5 @@
 <?php
     if( !isset($_SESSION['login'])){
-        //$load_view = new ViewController();
-        //$load_view->load_wiew('home');
         header('location:../');
     }
     $users= new UsersController();

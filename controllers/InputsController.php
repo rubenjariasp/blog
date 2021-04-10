@@ -21,4 +21,9 @@ class InputsController
     public function del($data= null){
         return $this->model->del($data);
     }
+
+    public function check_input($data){
+
+        return $this->model->check_input($data);
+    }
 }

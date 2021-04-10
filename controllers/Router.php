@@ -59,8 +59,10 @@ class Router{
 
         if ( isset($_POST['input_crud']) ){
             if($_POST['input_crud'] == 'select'){
-                $url= URL.'input/';
-                header('location:<?=$url;?>');
+                $id = $_POST['id'];
+                $url= URL.'input/'.$id.'/';
+
+                header('location:'. $url);
             }
         }
 
@@ -80,6 +82,10 @@ class Router{
 
             case 'inputs':
                 $load_view->load_wiew('inputs');
+            break;
+
+            case 'input':
+                $load_view->load_wiew('input');
             break;
 
             case 'logout':
