@@ -24,7 +24,7 @@
         <h3 class="sidebar__title_form">Modificar entrada</h3>
 
         <form method="post">
-            <input type="hidden" name="form" value="update_input">
+            <input type="hidden" name="input_crud" value="update_input">
             <input type="hidden" name="id" value="<?=$input[$i]['id'];?>">
             <div class="sidebar__container_inputs">
                 <label class="sidebar__label" for="title">Titulo:</label>

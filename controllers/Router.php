@@ -71,6 +71,16 @@ class Router{
 
                 header('location:'. $url);
             }
+
+            if($_POST['input_crud'] == 'update_input'){
+                $array_data= [];
+                foreach ($_POST as $key => $value) {
+                    $array_data[$key]=strtolower($value);
+                    unset($array_data['input_crud']);
+                }
+                $input_up = new InputsController();
+                $input_up->set($array_data, 'update');
+            }
         }
 
         $this->route = $route;

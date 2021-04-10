@@ -1,9 +1,7 @@
 <?php
     $inputs = new InputsController();
     $input= $inputs->get();
-    //echo '<pre>';
-    //var_dump($input);
-    //echo '</pre>';
+
 
 ?>
 <section class="main__section">
@@ -19,7 +17,7 @@
             <cite class="main__info">Autor: <?=ucwords( $input[$i]['autor'] );?>.</cite>
             <cite class="main__info">Fecha: <?=$input[$i]['fecha'];?>.</cite>
             <cite class="main__info">Categoria: <?=ucwords($input[$i]['categoria']);?>.</cite>
-            <?=$input[$i]['id'];?>
+
             <div class="main__container_butons">
                 <form method='post'>
                     <input type="hidden" name="input_crud" value="select">

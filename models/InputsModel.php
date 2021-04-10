@@ -9,7 +9,7 @@ class InputsModel extends Models
             $this->query = "INSERT INTO users (name, user, password, question, answer, rol) VALUES ('$array[name]', '$array[user]',MD5('$array[password]'),$array[question],'$array[answer]',$array[rol])";
         }
         elseif ($activity == 'update') {
-            $this->query = "UPDATE users SET name='$array[name]' WHERE user= '$array[user]' ";
+            $this->query = "UPDATE inputs SET title='$array[title]', description = '$array[description]' WHERE id= $array[id] ";
         }
 
         $this->set_query();
@@ -42,7 +42,7 @@ class InputsModel extends Models
 
     public function check_input($data){
 
-        $this->query = "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.* FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id WHERE i.id= $data";
+        $this->query = "SELECT i.*, u.name AS 'autor', u.user AS 'usuario', c.name as 'categoria' FROM inputs i INNER JOIN users u ON i.user = u.user INNER JOIN categories c ON i.id_category = c.id WHERE i.id= $data";
 
         $this->get_query();
 

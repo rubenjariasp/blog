@@ -6,6 +6,10 @@
     $url = explode('/', $_GET['route']);
     $inputs = new InputsController();
     $input= $inputs->check_input($url[1]);
+    //echo "<pre>";
+    //var_dump($input);
+    //echo"</pre>";
+    
 
 ?>
 <section class="main__section">
@@ -21,7 +25,7 @@
         <div class="main__more">
             <cite class="main__info">Autor: <?=ucwords( $input[$i]['autor'] );?>.</cite>
             <cite class="main__info">Fecha: <?=$input[$i]['fecha'];?>.</cite>
-            <cite class="main__info">Categoria: <?=$input[$i]['name'];?>.</cite>
+            <cite class="main__info">Categoria: <?=$input[$i]['categoria'];?>.</cite>
             <div class="main__container_butons">
 
                 <?php
