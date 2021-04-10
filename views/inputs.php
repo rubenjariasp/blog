@@ -5,12 +5,12 @@
     $input= $inputs->get($url[1]);
 ?>
 <section class="main__section">
-
+<h2 class="main__sub_title">Entradas de <?=$input[0]['categoria']?>.</h2>
     <?php
         if( count($input)>0 ):
             for ($i=0; $i < count($input); $i++):
     ?>
-    <h2 class="main__sub_title">Entradas de <?=$input[$i]['categoria']?>.</h2>
+
     <article class="main__articles">
         <h3 class="main__title_article"><?=ucfirst( $input[$i]['title'] );?></h3>
         <p class="main_description_article"><?=substr( $input[$i]['description'],0,150 );?>...</p>
